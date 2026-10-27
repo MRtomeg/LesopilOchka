@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title id="page-title">Лесопилка СтройЛес</title>
+  <title id="page-title">Лесопилка Орман Вууд</title>
   <style>
     :root{
       --green:#2e6b32;
@@ -90,7 +90,7 @@
     // ==========================================
     const texts = {
       ru: {
-        company_name: 'СтройЛес',
+        company_name: 'Орман Вууд',
         phone: '+7 (999) 123-45-67',
         email: 'info@lesopilka.ru',
         address: 'г. Москва, ул. Промышленная, д. 15',
@@ -153,7 +153,7 @@
         form_success: 'Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами.'
       },
       en: {
-        company_name: 'StroyWood',
+        company_name: 'Orman Wood',
         phone: '+7 (999) 123-45-67',
         email: 'info@lesopilka.ru',
         address: 'Moscow, Promyshlennaya st., 15',
@@ -220,7 +220,7 @@
 
   <header>
     <div class="nav">
-      <a class="logo" href="#" data-key="company_name" data-prefix="Лесопилка ">Лесопилка СтройЛес</a>
+      <a class="logo" href="#" data-key="company_name" data-prefix="Лесопилка ">Лесопилка Орман Вууд</a>
       <button class="burger" onclick="toggleMenu()" aria-label="Меню">☰</button>
       <nav>
         <ul id="nav-list">
@@ -353,7 +353,7 @@
   </main>
 
   <footer>
-    © <span id="year"></span> <span data-key="company_name" data-prefix="Лесопилка ">Лесопилка СтройЛес</span>. <span data-key="footer_rights">Все права защищены.</span>
+    © <span id="year"></span> <span data-key="company_name" data-prefix="Лесопилка ">Лесопилка Орман Вууд</span>. <span data-key="footer_rights">Все права защищены.</span>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 
@@ -372,6 +372,9 @@
       
       const t = texts[lang];
       document.documentElement.lang = lang;
+
+      // Изменение заголовка браузера
+      document.getElementById('page-title').textContent = (lang === 'en' ? 'Sawmill ' : 'Лесопилка ') + t.company_name;
 
       document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
